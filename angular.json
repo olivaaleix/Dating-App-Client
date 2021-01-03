@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -65,6 +66,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "sslKey": "./ssl/server.key",
+            "sslCert": "./ssl/server.crt",
+            "ssl": true,
             "browserTarget": "Dating-APP-Client:build"
           },
           "configurations": {
@@ -124,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "Dating-APP-Client"
+  "defaultProject": "Dating-APP-Client",
+  "cli": {
+    "analytics": "9a0f59f0-8fbd-4e2d-826a-d48c21d62d9b"
+  }
 }
