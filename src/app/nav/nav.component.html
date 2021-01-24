@@ -2,9 +2,7 @@
     <div class="container">
       <div class="container-fluid">
         <a class="navbar-brand" routerLink="/" routerLinkActive="active">Dating app</a>
-        <ul
-          class="navbar-nav mr-auto"
-        >
+        <ul class="navbar-nav mr-auto">
           <ng-container *ngIf="loggedIn">
             <li class="nav-item">
               <a routerLink="/members" routerLinkActive="active" class="nav-link">Matches</a>
@@ -18,11 +16,7 @@
           </ng-container>
         </ul>
   
-        <div
-          class="dropdown"
-          *ngIf="loggedIn"
-          dropdown
-        >
+        <div class="dropdown" *ngIf="loggedIn" dropdown>
           <a class="dropdown-toggle text-light text-decoration-none" dropdownToggle>Welcome user</a>
           <div class="dropdown-menu mt-3" *dropdownMenu>
             <a class="dropdown-item">Edit profile</a>
@@ -31,33 +25,28 @@
           </div>
         </div>
   
-        <form
-          *ngIf="!loggedIn"
-          #loginForm="ngForm"
-          class="form-inline mt-2 mt-md-0"
-          (ngSubmit)="login()"
-          autocomplete="off"
-        >
-          <input
-            name="username"
-            [(ngModel)]="model.username"
-            class="form-control mr-sm-2"
-            type="text"
-            placeholder="Username"
-            aria-label="Search"
-          />
-          <input
-            name="password"
-            [(ngModel)]="model.password"
-            class="form-control mr-sm-2"
-            type="password"
-            placeholder="Password"
-            aria-label="Search"
-          />
-          <button class="btn btn-success my-2 my-sm-0" type="submit">
-            Login
-          </button>
+          <form
+            *ngIf="!loggedIn"
+            #loginForm="ngForm"
+            class="form-inline mt-2 mt-md-0"
+            (ngSubmit)="login()"
+            autocomplete="off">
+            <input
+              name="username"
+              [(ngModel)]="model.username"
+              class="form-control mr-sm-2"
+              type="text"
+              placeholder="Username"
+              aria-label="Search"/>
+            <input
+              name="password"
+              [(ngModel)]="model.password"
+              class="form-control mr-sm-2"
+              type="password"
+              placeholder="Password"
+              aria-label="Search"/>
+          <button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
         </form>
       </div>
     </div>
-  </nav>  
+  </nav>
