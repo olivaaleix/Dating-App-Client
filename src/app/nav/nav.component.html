@@ -16,17 +16,10 @@
             <a routerLink="/messages" routerLinkActive="active" class="nav-link">Messages</a>
           </li>
         </ng-container>
-        <li class="nav-item">
-          <a routerLink="/errors" routerLinkActive="active" class="nav-link">Errors</a>
-        </li>
       </ul>
 
-      <div
-        class="dropdown"
-        *ngIf="(accountService.currentuser$ | async) as user"
-        dropdown
-      >
-        <a class="dropdown-toggle text-light" dropdownToggle>Welcome user</a>
+      <div class="dropdown" *ngIf="(accountService.currentuser$ | async) as user" dropdown>
+        <a class="dropdown-toggle text-light" dropdownToggle>Welcomeuser</a>
         <div class="dropdown-menu mt-3" *dropdownMenu>
           <a class="dropdown-item">Edit profile</a>
           <div class="dropdown-divider"></div>
@@ -34,8 +27,7 @@
         </div>
       </div>
 
-      <form
-        *ngIf="(accountService.currentuser$ | async) === null"
+      <form *ngIf="(accountService.currentuser$ | async) === null"
         #loginForm="ngForm"
         class="form-inline mt-2 mt-md-0"
         (ngSubmit)="login()"
